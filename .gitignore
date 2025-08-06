@@ -1,0 +1,61 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+
+# Django-specific
+*.log
+*.pot
+*.pyc
+*.sqlite3
+db.sqlite3
+media/
+staticfiles/
+static/
+
+# Django secrets & config
+.env
+*.env
+config/settings_local.py
+
+# IDEs & editors
+.vscode/
+.idea/
+*.swp
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Coverage & test
+htmlcov/
+.coverage
+.tox/
+.nox/
+pytest_cache/
+
+# Docker
+*.pid
+*.pid.lock
+
+# Jupyter notebooks
+.ipynb_checkpoints/
+
+# MyPy
+.mypy_cache/
+
+# Backup files
+*~
+
+# Excel files gerados
+*.xlsx
+*.xls
