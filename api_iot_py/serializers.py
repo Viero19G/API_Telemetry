@@ -8,7 +8,7 @@ class IoTEventSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = IoTEvent
-        fields = ['id', 'device_id', 'state', 'timestamp', 'hours_worked', 'timestamp_unix']
+        fields = ['id', 'device_id', 'state', 'timestamp','hours_powered', 'hours_worked', 'timestamp_unix']
         read_only_fields = ['timestamp']  # timestamp calculado, não editável diretamente
 
     def create(self, validated_data):
