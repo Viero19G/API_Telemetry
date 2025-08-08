@@ -1,0 +1,26 @@
+# Dockerfile
+
+# Etapa base
+FROM python:3.12-slim
+
+# Diretório de trabalho
+WORKDIR /app
+
+# Copia os arquivos necessários
+COPY requirements.txt .
+
+# Instala dependências
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copia o restante do projeto
+COPY . .
+
+# Variáveis de ambiente
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
+# Expõe a porta do Django
+EXPOSE 8000
+
+# Comando para rodar o servidor Django
+CMD ["gunicorn", "core.wsgi:application", "--bind", "0.0.0.0:8000"]

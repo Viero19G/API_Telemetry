@@ -1,0 +1,20 @@
+version: '3.9'
+
+services:
+  web:
+    build: .
+    container_name: django-api
+    command: gunicorn core.wsgi:application --bind 0.0.0.0:8000
+    ports:
+      - "8000:8000"  # Esse mapeamento é opcional se você não for acessar diretamente pela porta
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+    restart: always
+    networks:
+      - proxy  # Adicionado para permitir que o Nginx Proxy Manager enxergue o serviço
+
+networks:
+  proxy:
+    external: true
