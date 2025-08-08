@@ -4,7 +4,7 @@ services:
   web:
     build: .
     container_name: django-api
-    command: gunicorn core.wsgi:application --bind 0.0.0.0:8000
+    command: gunicorn core_iot_py.wsgi:application --bind 0.0.0.0:8000
     ports:
       - "8000:8000"  # Esse mapeamento é opcional se você não for acessar diretamente pela porta
     env_file:
